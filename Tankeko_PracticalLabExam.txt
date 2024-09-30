@@ -1,0 +1,25 @@
+//NO.5: Write a C++ program to reverse the elements in an array. Original Array: numbers[1,2,3,4,5]
+#include <iostream> 
+#include <array>
+using namespace std;
+
+int main() {
+    array<int, 5> numbers = {5, 4, 3, 2, 1}; //Array name and elements initialization
+
+    for (size_t i = 0; i < numbers.size() / 2; ++i) { //Array reversal loop
+    
+        int temp = numbers[i];//Creation of temp array to hold array elements to be reversed
+        
+        numbers[i] = numbers[numbers.size() - 1 - i];//To reverse elements in array, for every element in the array, -1 (-1 referring to the code traversing BACKWARDS, stargin from the tail of the array), numbers.size() counts the elements present in the array
+        numbers[numbers.size() - 1 - i] = temp;//The reversed elements in the array is now placed in the temp/null array
+    }
+
+    for (int num : numbers) {
+        cout << num << " "; //displays the reversed elements in numbers array
+    }
+    cout << endl;
+
+    return 0;
+}
+
+
